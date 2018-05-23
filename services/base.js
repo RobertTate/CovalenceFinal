@@ -1,25 +1,28 @@
 import 'isomorphic-fetch';
+import { AsyncStorage } from 'react-native';
+
+
 
 const AUTH_TOKEN_KEY = 'authtoken';
 let authToken = '';
 
 function setAuthToken(token) {
     authToken = `Bearer ${token}`;
-    if (localStorage) {
-        localStorage.setItem(AUTH_TOKEN_KEY, authToken);
+    if (AsyncStorage) {
+        AsyncStorage.setItem(AUTH_TOKEN_KEY, authToken);
     }
 }
 
 function clearAuthToken() {
     authToken = '';
-    if (localStorage) {
-        localStorage.removeItem(AUTH_TOKEN_KEY);
+    if (AsyncStorage) {
+        AsyncStorage.removeItem(AUTH_TOKEN_KEY);
     }
 }
 
 function populateAuthToken() {
-    if (localStorage) {
-        let token = localStorage.getItem(AUTH_TOKEN_KEY);
+    if (AsyncStorage) {
+        let token = AsyncStorage.getItem(AUTH_TOKEN_KEY);
         if (token && token !== null) {
             authToken = token;
         }
