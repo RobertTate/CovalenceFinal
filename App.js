@@ -1,33 +1,44 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { isLoggedIn } from './services/users';
-import MapScreen from './screens/mapscreen';
-import SplashScreen from './screens/splashscreen';
+import { createRootNavigator } from './components/navigator';
+
+
 
 
 export default class App extends Component {
 
+  constructor(props) {
+    super(props);
 
-  render() {
-    if (isLoggedIn()) {
-      return (
-        <MapScreen />
-      )
-    } else {
-      return (
-        <SplashScreen />
-      )
+    this.state = {
+      signedIn: false,
     }
   }
 
+  componentDidMount() {
+    if (isLoggedIn()) {
+      this.setState({ signedIn: true })
+    }
+  }
 
-
-
+  render() {
+    
+    const Layout = createRootNavigator(this.state.signedIn);
+    return <Layout />
+  }
 }
 
-
-
-
+// if (isLoggedIn()) {
+//   return (
+//     <Navigator />
+//   )
+// } else {
+//   return (
+//     <SplashScreen />
+//   )
+// }
+// }
 
 
 // const styles = StyleSheet.create({

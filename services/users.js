@@ -1,11 +1,9 @@
 import * as baseService from './base';
-import { AsyncStorage } from 'react-native';
 
 let loggedIn = false;
 
 function isLoggedIn() {
-    if (AsyncStorage.getItem('authtoken')) {
-        baseService.populateAuthToken();
+    if (baseService.populateAuthToken()) {
         loggedIn = true;
     }
     return loggedIn;

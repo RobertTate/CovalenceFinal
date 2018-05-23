@@ -11,6 +11,7 @@
     "express": "^4.16.3",
     "mailgun-js": "^0.18.0",
     "mysql": "^2.15.0",
+    "native-base": "^2.4.5",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
