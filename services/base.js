@@ -1,4 +1,3 @@
-
 import { AsyncStorage } from 'react-native';
 
 
@@ -20,13 +19,24 @@ function clearAuthToken() {
     }
 }
 
+// function populateAuthToken() {
+//     let token = AsyncStorage.getItem(AUTH_TOKEN_KEY);
+//     if (token && token !== null) {
+//         authToken = token;
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
 function populateAuthToken() {
-    if (AsyncStorage) {
-        let token = AsyncStorage.getItem(AUTH_TOKEN_KEY);
+    AsyncStorage.getItem(AUTH_TOKEN_KEY)
+    .then((token) => {
         if (token && token !== null) {
             authToken = token;
+            return true;
         }
-    }
+    }).catch((err) => {return false});
 }
 
 function makeFetch(url, info) {
