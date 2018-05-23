@@ -1,4 +1,4 @@
-import 'isomorphic-fetch';
+
 import { AsyncStorage } from 'react-native';
 
 

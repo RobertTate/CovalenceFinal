@@ -15,15 +15,19 @@ export default class App extends Component {
       )
     } else {
       return (
-        <SplashScreen />
+        <View>
+          <SplashScreen />
+          <MapScreen />
+        </View>
       )
     }
   }
-
-
-
-
 }
+
+
+
+
+
 
 
 
