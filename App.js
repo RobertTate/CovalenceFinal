@@ -10,71 +10,21 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       signedIn: false,
     }
   }
-    componentDidMount() {
-      if (isLoggedIn()) {
-        this.setState({ signedIn: true })
-      }
+
+  componentDidMount() {
+    if (isLoggedIn()) {
+      this.setState({ signedIn: true })
     }
-  
+  }
 
   render() {
-    if (isLoggedIn()) {
-      return (
-        <MapScreen />
-      )
-    } else {
-      return (
-        <View>
-          <SplashScreen />
-          <MapScreen />
-        </View>
-      )
-
     
+    const Layout = createRootNavigator(this.state.signedIn);
+    return <Layout />
   }
 }
-}
-  
-
-  
-
-
-
-
-
-// const Layout = createRootNavigator(this.state.signedIn);
-//     return <Layout />
-// if (isLoggedIn()) {
-//   return (
-//     <Navigator />
-//   )
-// } else {
-//   return (
-//     <SplashScreen />
-//   )
-// }
-// }
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// 
