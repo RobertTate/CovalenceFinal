@@ -21,15 +21,10 @@ export default class SignUpScreen extends Component {
     }
 
     signup() {
-        console.log('Clicked the SignUp Button')
         userService.newUser(this.state.name, this.state.email, this.state.username, this.state.password)
             .then(() => {
-                console.log('Made it past creating a user, about to login with that info')
-                console.log(this.state.email, this.state.password);
                return userService.login(this.state.email, this.state.password)
             }).then(() => {
-                console.log('made it through the login process, about to change redirectToReferrer to true')
-                // this.setState({ redirectToReferrer: true });
                 this.props.navigation.navigate('Map', {});
             })
             .catch((err) => {
@@ -41,15 +36,6 @@ export default class SignUpScreen extends Component {
 
 
     render() {
-        const { redirectToReferrer } = this.state;
-
-        if (redirectToReferrer) {
-            return (
-                <App />
-            )
-        }
-
-
 
         return (
             <Container>
