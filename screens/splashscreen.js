@@ -12,12 +12,12 @@ export default class SplashScreen extends Component {
     render() {
         return (
             <Container>
-                <Content>
+                <Content contentContainerStyle={{ justifyContent: 'space-around', alignItems: 'center', flex: 1 }}>
                     <Text>This is the splash page.</Text>
-                    <Button onPress={() => this.props.navigation.navigate('SignIn')}>
+                    <Button style={{ alignSelf: 'center' }} onPress={() => this.props.navigation.navigate('SignIn')}>
                         <Text>Sign In</Text>
                     </Button>
-                    <Button onPress={() => this.props.navigation.navigate('SignUp')}>
+                    <Button style={{ alignSelf: 'center' }} onPress={() => this.props.navigation.navigate('SignUp')}>
                         <Text>Sign Up</Text>
                     </Button>
                 </Content>

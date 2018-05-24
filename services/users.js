@@ -33,6 +33,7 @@ function login(email, password) {
         })
     })
     .then((response) => {
+        console.log('login success');
         if (response.ok) {
             return response.json()
             .then((jsonResponse) => {
@@ -54,12 +55,12 @@ function logout() {
 }
 
 function me() {
-    return baseService.get('/api/users/me');
+    return baseService.get('/api/players/me');
 }
 
 
-function newUser(name, email, hash) {
-    return baseService.post('/api/users/', {name, email, hash})
+function newUser(name, email, username, hash) {
+    return baseService.post('/api/auth/signup', {name, email, username, hash})
 }
 
 
