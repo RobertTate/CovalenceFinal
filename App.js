@@ -10,8 +10,17 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      signedIn: false,
+    }
+  }
+    componentDidMount() {
+      if (isLoggedIn()) {
+        this.setState({ signedIn: true })
+      }
+    }
+  
 
-<<<<<<< HEAD
   render() {
     if (isLoggedIn()) {
       return (
@@ -24,33 +33,21 @@ export default class App extends Component {
           <MapScreen />
         </View>
       )
-=======
-    this.state = {
-      signedIn: false,
->>>>>>> 6928fa9793dd87df6ac44f5631c0170f3cda473e
-    }
-  }
-}
 
-
-  componentDidMount() {
-    if (isLoggedIn()) {
-      this.setState({ signedIn: true })
-    }
-  }
-
-<<<<<<< HEAD
-
-
-=======
-  render() {
     
-    const Layout = createRootNavigator(this.state.signedIn);
-    return <Layout />
   }
 }
->>>>>>> 6928fa9793dd87df6ac44f5631c0170f3cda473e
+}
+  
 
+  
+
+
+
+
+
+// const Layout = createRootNavigator(this.state.signedIn);
+//     return <Layout />
 // if (isLoggedIn()) {
 //   return (
 //     <Navigator />
@@ -80,4 +77,4 @@ export default class App extends Component {
 //     color: '#333333',
 //     marginBottom: 5,
 //   },
-// });
+// 
