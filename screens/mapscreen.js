@@ -88,6 +88,7 @@ class mapscreen extends Component {
       </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({
