@@ -11,7 +11,6 @@ export default class SignUpScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirectToReferrer: false,
             feedbackMessage: '',
             email: '',
             password: ''
@@ -23,7 +22,7 @@ export default class SignUpScreen extends Component {
         userService.login(this.state.email, this.state.password)
             .then(() => {
                 console.log('made it through the login process, about to change redirectToReferrer to true')
-                this.setState({ redirectToReferrer: true });
+                this.props.navigation.navigate('Map', {});
             })
             .catch((err) => {
                 if (err.message) {

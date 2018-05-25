@@ -21,6 +21,11 @@ export default class SplashScreen extends Component {
                         <Text>Sign Up</Text>
                     </Button>
                 </Content>
+                <Footer>
+                    <Button style={{ alignSelf: 'flex-end' }} onPress={() => this.props.navigation.navigate('About')}>
+                            <Text>Aboout Phone Tag!</Text>
+                    </Button>
+                </Footer>
             </Container>
         )
     }
