@@ -38,33 +38,56 @@ export default class SignUpScreen extends Component {
     render() {
 
         return (
-            <Container>
-                <Content contentContainerStyle={{ justifyContent: 'center', flex: 1 }}>
-                    <Form>
-                        <Item floatingLabel>
-                            <Label>Enter Your Name</Label>
-                            <Input onChangeText={(text) => this.setState({name: text})} />
-                        </Item>
-                        <Item floatingLabel>
-                            <Label>Enter Your Email</Label>
-                            <Input onChangeText={(text) => this.setState({email: text})}/>
-                        </Item>
-                        <Item floatingLabel>
-                            <Label>Choose Your Username</Label>
-                            <Input onChangeText={(text) => this.setState({username: text})}/>
-                        </Item>
-                        <Item floatingLabel last>
-                            <Label>Select A Password</Label>
-                            <Input onChangeText={(text) => this.setState({password: text})}/>
-                        </Item>
-                    </Form>
-                    <Button onPress={() => this.signup()} block style={{ margin: 15, marginTop: 50 }}>
-                        <Text>SIGN UP</Text>
-                    </Button>
-                </Content>
-            </Container>
+            <Container style={styles.container}>
+            <Content padder style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }} >
+              <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', paddingTop: 20}}>
+                    <View><Text style={{fontSize:60, textAlign: 'center'}}>PhoneTag</Text></View>
+                    <View><Text style={{textAlign: 'center' }}>Lorem ipsum dolor sit amet, cu modus falli mea. </Text></View>
+                  </View>
+             
+              <View style={{ flex:1}}>
+                  <Form>
+                  <Item > 
+                      <Icon active name="person" />
+                      <Input placeholder="Name" onChangeText={(text) => this.setState({ name: text })} />
+                    </Item>
+                  <Item > 
+                      <Icon active name="person" />
+                      <Input placeholder="Email" onChangeText={(text) => this.setState({ email: text })} />
+                    </Item>
+                    <Item>
+                      <Icon active name="mail" />
+                      <Input placeholder="Username" onChangeText={(text) => this.setState({ username: text })} />
+                    </Item>
+                    <Item>
+                      <Icon active name="lock" />
+                      <Input placeholder="Password" onChangeText={(text) => this.setState({password: text})}/>
+                    </Item>
+                    <Button onPress={() => this.signup()} block style={{ margin: 15, marginTop: 20 }}>
+                    <Text>Sign Up</Text>
+                  </Button>
+                  </Form>
+                  <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around', paddingTop: 20}}>
+                    <View><Text style={{fontSize:15}}>Sign In</Text></View>
+                    <View><Text style={{fontSize:15}}>Forgot password? </Text></View>
+                  </View>
+              </View>
+              <View style={{ flex:1}}></View>
+                
+    
+            </Content>
+          </Container>
         )
     }
 
 
 }
+const styles = StyleSheet.create({
+    container: {
+      backgroundColor: "yellow"
+    },
+    main: {
+      flex:1, 
+      backgroundColor: 'blue' 
+    }
+  });
