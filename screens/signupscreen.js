@@ -39,7 +39,7 @@ export default class SignUpScreen extends Component {
 
         return (
             <Container style={styles.container}>
-            <Content padder style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }} >
+            <Content padder style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}  >
               <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', paddingTop: 20}}>
                     <View><Text style={{fontSize:60, textAlign: 'center'}}>PhoneTag</Text></View>
                     <View><Text style={{textAlign: 'center' }}>Lorem ipsum dolor sit amet, cu modus falli mea. </Text></View>
